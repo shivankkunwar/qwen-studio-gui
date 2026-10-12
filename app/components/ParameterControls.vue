@@ -213,22 +213,14 @@ const onTransparencyToggle = () => {
       </div>
     </div>
 
-    <!-- Denoising Steps Slider -->
+    <!-- Turbo uses the checkpoint's fixed 8-step schedule, so there is no step slider. -->
     <div class="param-group">
       <div class="param-group__label-row">
         <label class="param-group__label">
-          Denoising Steps: <span class="param-value-tag">{{ steps }}</span>
+          Denoising Steps: <span class="param-value-tag">8</span>
         </label>
-        <span class="param-group__hint">Recommended: 40</span>
+        <span class="param-group__hint">Fixed by Qwen-Image-2.1-Turbo</span>
       </div>
-      <input
-        type="range"
-        min="1"
-        max="100"
-        :value="steps"
-        class="custom-slider"
-        @input="emit('update:steps', parseInt(($event.target as HTMLInputElement).value, 10))"
-      />
     </div>
 
     <!-- Guidance Scale (CFG) Slider -->
